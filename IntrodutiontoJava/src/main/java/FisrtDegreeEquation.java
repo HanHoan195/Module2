@@ -24,11 +24,5 @@ public class FisrtDegreeEquation {
                 System.out.println("NO solution!");
             }
         }
-
-
-
-
-
-
     }
 }
