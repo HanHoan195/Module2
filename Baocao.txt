@@ -1,2 +1,54 @@
-10/3/23
--Cách khai báo mảng: 
+13/03
+// Scanner dùng để nhập thông tin
+public static Scanner scanner = new Scanner(System.in);
+
+// In có xuống dòng
+System.out.println();
+
+// Lớp Arrays có phương thức toString dùng để chuyển 1 mảng thành chuỗi
+Arrays.toString(a)
+
+// In có format
+System.out.printf("%s xin chao", "C1222I1");
+
+//Sao chép 1 mảng gốc thành 1 mảng mới theo 1 độ dài cho trước
+Arrays.copyOf(a, a.length + 1);
+
+
+
+14/03
+Đọc thêm và notes:
+Print format trong java
+https://niithanoi.edu.vn/printf-trong-java.html
+
+Note:
+-%c: ký tự
+-%i: số nguyên
+-%d và %u: số thập phân
+-%s: chuỗi
+-%t: định dạng ngày giờ
+-%% và \%: dấu %
+
+Xem trước: OOP
+https://www.youtube.com/watch?v=tcGNKqhu3GE
++ Từ khóa class: - Là từ khóa dùng để khai báo lớp.
+                VD: khai báo lớp Car:    class Car{}
+                -Tên lớp là 1 danh từ, theo quy tắc Camel, không trùng vs các từ khóa trong java, không bắt đầu bằng số, có thể bắt đầu bằng $ hoặc _.
+                
++ Từ khóa new: - Dùng để khởi tạo đối tượng.
+                VD: Car audi = new Car();
+                    Hoặc tách rời việc khai báo biến và khởi tạo đối tượng:
+                    Car audi;
+                    audi = new Car();
+
++ Thuộc tính: -Mô tả các đặc điểm của đối tượng (instance variable )
+              -Cú pháp: accessmodifier datatype propertyname.
+              VD: public String color;
+                  public double price;
+                  
++Phương thức:- Mô tả các hành vi mà đối tượng có thể thực hiện (instance method)
+              public int speed(){}
+
+
++ Cách truy xuất các thuộc tính, phương thức
++ getter, setter
