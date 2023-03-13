@@ -78,8 +78,41 @@ public class ReadNumber {
                     break;
             }
             System.out.println(numteen);
-        } else if (20<= number && number<100) {
-            int tens =number / 10;
+        } else if (100<= number && number <1000) {
+            int hundreds = number / 100;
+            String Hundreds = "";
+            switch (hundreds) {
+                case 1:
+                    Hundreds = "One hundreds";
+                    break;
+                case 2:
+                    Hundreds = "Two hundreds";
+                    break;
+                case 3:
+                    Hundreds = "Three hundreds";
+                    break;
+                case 4:
+                    Hundreds = "Four hundreds";
+                    break;
+                case 5:
+                    Hundreds = "Five hundreds";
+                    break;
+                case 6:
+                    Hundreds = "Six hundreds";
+                    break;
+                case 7:
+                    Hundreds = "Seven hundreds";
+                    break;
+                case 8:
+                    Hundreds = "Eight hundreds";
+                    break;
+                case 9:
+                    Hundreds = "Nine hundreds";
+                    break;
+            }
+            System.out.print(Hundreds);
+//        } else if (20<= number && number<100) {
+            int tens =hundreds / 10;
             String Tens = "";
             switch (tens){
                 case 2:
@@ -141,42 +174,12 @@ public class ReadNumber {
                     break;
             }
             System.out.print(Unit);
-        } else if (100<= number && number <1000) {
-            int hundreds = number / 100;
-            String Hundreds = "";
-            switch (hundreds){
-                case 1:
-                    Hundreds = "One hundreds";
-                    break;
-                    case 2:
-                    Hundreds = "Two hundreds";
-                    break;
-                    case 3:
-                    Hundreds = "Three hundreds";
-                    break;
-                    case 4:
-                    Hundreds = "Four hundreds";
-                    break;
-                    case 5:
-                    Hundreds = "Five hundreds";
-                    break;
-                    case 6:
-                    Hundreds = "Six hundreds";
-                    break;
-                    case 7:
-                    Hundreds = "Seven hundreds";
-                    break;
-                case 8:
-                    Hundreds = "Eight hundreds";
-                    break;
-                case 9:
-                    Hundreds = "Nine hundreds";
-                    break;
-            }
-            System.out.println(Hundreds);
+
 
         }
-
+    int a =5, b = 7;
+        int c = a++ + ++b;
+        System.out.println(c);
 
     }
 }
