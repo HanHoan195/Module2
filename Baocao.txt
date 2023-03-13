@@ -50,5 +50,33 @@ https://www.youtube.com/watch?v=tcGNKqhu3GE
               public int speed(){}
 
 
-+ Cách truy xuất các thuộc tính, phương thức
-+ getter, setter
++ Cách truy xuất các thuộc tính: Sử dụng dấu ( . ) để truy suât đến thuộc tính của đối tượng
+                                  VD:Class Car audi = new Car("Back", 4000);
+                                      System.out.println("Color is: " + audi.color);
+                                      System.out.println("Price is: " + audi.price);
+
++ Cách gọi phương thức: Sử dụng dấu ( . ) để gọi phương thức
+                         VD: int maxSpeed = audi.speed();
+                        
++ Getter:là phương thức cho phép lấy về giá trị của thuộc tính
+          -Cú pháp khai báo getter:
+              public returnType getPropetyName()
+          -Đối vs thuộc tính kiểu boolean thì tên getter bắt đầu bằng chữ "is": 
+              public boolean isPropertyName()
+          
+
++Setter:là phương thức cho phép thay đổi giá trị của thuộc tính
+        -Cú pháp khai báo setter:
+            public void setPropertyName(dataType propertyValue)
+            
+            VD: setter và getter:
+            class Person{
+                    private Stringname;
+                    public void setName(String name){
+                    this.name = name;
+                    }
+                    public String getName(){
+                    return this.name;
+                    }
+                    }
+
