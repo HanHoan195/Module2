@@ -79,8 +79,103 @@ https://www.youtube.com/watch?v=tcGNKqhu3GE
                     return this.name;
                     }
                     }
+                    
+                    
                     /*****************************************************************************/
                     
      14/3               
                     
+Đọc tìm hiểu và demo:
 
++ access modifier trong Java: - Là các từ dùng trước các khai báo của một class, biến hay method để thể hiện khả năng truy cập của class, biến hay method.
+                              - Với class có hai loại Access Modifier là public và default     
+                              -Nhưng vs biến và method có 4 phạm vi truy cập của AccessModifier như sau:
+                                  1. private : có quyền truy cập trong phạm vi class.
+                                     VD: public class Demo1 {
+                                              private int sum (int a, int b){
+                                                  return a + b;
+                                              }
+                                          }
+                                  2. default : nếu không khai báo modifier nào thì nó chính là trường hợp mặc định, và phạm vi truy cập trong 1 package.
+                                    VD: public class Demo1 {
+                                               int sum (int a, int b){
+                                                  return a + b;
+                                              }
+                                          }
+                                  3. protected : phạm vi truy cập trong 1 package .
+                                    VD: public class Demo1 {
+                                                protected int sum (int a, int b){
+                                                    return a + b;
+                                                }
+                                            }
+                                  4. public : phạm vi truy cập trong toàn bộ projects.
+                                    VD: public class Demo1 {
+                                                public int sum (int a, int b){
+                                                    return a + b;
+                                                }
+                                            }
+
+
++ Biến static trong java: -Biến static còn đc gọi là biến của lớp (class variable).
+                          - Chúng không gắn với bất kỳ đối tượng nào mà chỉ gắn vs lớp đối tượng.
+                          - Dùng chung cho các đối tượng thuộc lớp đó.
+                          -Cú pháp khai báo biến static: modifier static data_type variable_name;
+                            VD: public static String name = "Hoàn";
+                            
++ Nested class là gì? - Là 1 class được khai báo bên trong 1 class khác.
+                      - Được chia thành hai loại: static nested classes và non-static nested class.
+                        + Static Nested Classes: là class được khai báo dạng static bên trong một class khác.
+                            VD: class OuterClass {
+                                      class StaticInnerClass {
+                                     
+                                      }
+                                  }
+                        + non-static nested clas: bao gồm inner classes, local classes và anynomous classes.
+                            .inner class: là khai báo 1 class không phải dạng static bên trong 1 class khác.
+                               VD: public class OuterClass {
+                                          class InnerClass {
+                                         
+                                          }
+                                      }
+                                      
+                            .local classes: khai báo class bên trong một method khác:
+                                VD: public class OuterClass {
+                                          public String sayHello(String name) {
+                                                class WelcomeMessage {
+                                                }
+                                             }
+                                          }
+                                          
+                           .anyomous class: được khai báo bên trong class hoặc method mà không có tên cụ thể (không hiểu đc) 
+                           
+                           
++ Biến local: -Biến local được khai báo trong các phương thức, hàm contructor hoặc trong các block.
+              -Biến local được tạo bên trong các phương thức, contructor, block và sẽ bị phá hủy khi kết thúc các phương thức, contructor và block.
+              -Không được sử dụng "access modifier" khi khai báo biến local.
+              -Các biến local được lưu trên vùng nhớ stack của bộ nhớ.
+              -Bạn cần khởi tạo giá trị mặc định cho biến local trước khi có thể sử dụng.
+                  VD: public class Demo1 {
+                              public void sumNumber(){
+                                  int a = 10; //biến local
+                                  System.out.println(a);
+                              }
+                              
+ + Biến instance (biến toàn cục): - Được khai báo trong một lớp(class), bên ngoài các phương thức, constructor và các block.
+                                  - Biến instance được lưu trong bộ nhớ heap.
+                                  -Biến instance được tạo khi một đối tượng được tạo bằng việc sử dụng từ khóa “new” và sẽ bị phá hủy khi đối tượng bị phá hủy.
+                                 - Biến instance có thể được sử dụng bởi các phương thức, constructor, block, ... Nhưng nó phải được sử dụng thông qua một đối tượng cụ                                                  thể.
+                                  - Bạn được phép sử dụng "access modifier" khi khai báo biến instance, mặc định là "default".
+                                 - Biến instance có giá trị mặc định phụ thuộc vào kiểu dữ liệu của nó. Ví dụ nếu là kiểu int, short, byte thì giá trị mặc định là 0,                                      kiểu double thì là 0.0d, ... Vì vậy, bạn sẽ không cần khởi tạo giá trị cho biến instance trước khi sử dụng.
+                                 - Bên trong class mà bạn khai báo biến instance, bạn có thể gọi nó trực tiếp bằng tên khi sử dụng ở khắp nới bên trong class đó.
+                                    instance và biến local, biến static  trong java           
+                                      VD:public class Name {
+                                                   public String fisrtName;
+
+                                                }
++ Biến static: -Biến static được khai báo trong một class với từ khóa "static", phía bên ngoài các phương thức, constructor và block.
+              -Sẽ chỉ có duy nhất một bản sao của các biến static được tạo ra, dù bạn tạo bao nhiêu đối tượng từ lớp tương ứng.
+              -Biến static được lưu trữ trong bộ nhớ static riêng.
+              -Biến static được tạo khi chương trình bắt đầu chạy và chỉ bị phá hủy khi chương trình dừng.
+              -Giá trị mặc định của biến static phụ thuộc vào kiểu dữ liệu bạn khai báo tương tự biến instance.
+              -Biến static được truy cập thông qua tên của class chứa nó, với cú pháp: TenClass.tenBien.
+              -Trong class, các phương thức sử dụng biến static bằng cách gọi tên của nó khi phương thức đó cũng được khai báo với từ khóa "static"                                            
