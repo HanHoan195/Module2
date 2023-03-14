@@ -5,22 +5,24 @@ import java.util.Scanner;
 public class Menu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int choice = -1;
-        while (choice != 0){
+//        int choice = -1;
+        boolean checkMenu = false;
+        do {
             System.out.println("Jame.Menu");
             System.out.println("1. Draw triangle");
             System.out.println("2. Draw square");
             System.out.println("3. Draw rectangle");
             System.out.println("0. Exit");
             System.out.println("Enter your choice");
-            choice = scanner.nextInt();
-        }
+            int choice = scanner.nextInt();
+
+
         switch (choice){
             case 0:
                 System.out.println("Exit");
 
             case 1:
-                System.out.println("Draw Triangle");
+//                System.out.println("Draw Triangle");
                 drawTriangle();
                 break;
             case 2:
@@ -31,15 +33,9 @@ public class Menu {
                 System.out.println("Draw Rectangle");
                 drawRectangle();
                 break;
-
         }
-
-
-
-
-
-
-
+        checkMenu = true;
+        } while (checkMenu);
     }
 
     //vex tam giasc
@@ -52,7 +48,7 @@ public class Menu {
             System.out.println();
         }
     }
-    //ve hinih vuong
+    //ve hinh vuong
     public static void drawSquare(){
         for (int i = 0; i < size; i++) {
             for (int j = 0; i < size; i++) {
