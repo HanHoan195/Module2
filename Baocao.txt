@@ -1,2 +1,181 @@
-10/3/23
--Cách khai báo mảng: 
+13/03
+// Scanner dùng để nhập thông tin
+public static Scanner scanner = new Scanner(System.in);
+
+// In có xuống dòng
+System.out.println();
+
+// Lớp Arrays có phương thức toString dùng để chuyển 1 mảng thành chuỗi
+Arrays.toString(a)
+
+// In có format
+System.out.printf("%s xin chao", "C1222I1");
+
+//Sao chép 1 mảng gốc thành 1 mảng mới theo 1 độ dài cho trước
+Arrays.copyOf(a, a.length + 1);
+
+
+
+14/03
+Đọc thêm và notes:
+Print format trong java
+https://niithanoi.edu.vn/printf-trong-java.html
+
+Note:
+-%c: ký tự
+-%i: số nguyên
+-%d và %u: số thập phân
+-%s: chuỗi
+-%t: định dạng ngày giờ
+-%% và \%: dấu %
+
+Xem trước: OOP
+https://www.youtube.com/watch?v=tcGNKqhu3GE
++ Từ khóa class: - Là từ khóa dùng để khai báo lớp.
+                VD: khai báo lớp Car:    class Car{}
+                -Tên lớp là 1 danh từ, theo quy tắc Camel, không trùng vs các từ khóa trong java, không bắt đầu bằng số, có thể bắt đầu bằng $ hoặc _.
+                
++ Từ khóa new: - Dùng để khởi tạo đối tượng.
+                VD: Car audi = new Car();
+                    Hoặc tách rời việc khai báo biến và khởi tạo đối tượng:
+                    Car audi;
+                    audi = new Car();
+
++ Thuộc tính: -Mô tả các đặc điểm của đối tượng (instance variable )
+              -Cú pháp: accessmodifier datatype propertyname.
+              VD: public String color;
+                  public double price;
+                  
++Phương thức:- Mô tả các hành vi mà đối tượng có thể thực hiện (instance method)
+              public int speed(){}
+
+
++ Cách truy xuất các thuộc tính: Sử dụng dấu ( . ) để truy suât đến thuộc tính của đối tượng
+                                  VD:Class Car audi = new Car("Back", 4000);
+                                      System.out.println("Color is: " + audi.color);
+                                      System.out.println("Price is: " + audi.price);
+
++ Cách gọi phương thức: Sử dụng dấu ( . ) để gọi phương thức
+                         VD: int maxSpeed = audi.speed();
+                        
++ Getter:là phương thức cho phép lấy về giá trị của thuộc tính
+          -Cú pháp khai báo getter:
+              public returnType getPropetyName()
+          -Đối vs thuộc tính kiểu boolean thì tên getter bắt đầu bằng chữ "is": 
+              public boolean isPropertyName()
+          
+
++Setter:là phương thức cho phép thay đổi giá trị của thuộc tính
+        -Cú pháp khai báo setter:
+            public void setPropertyName(dataType propertyValue)
+            
+            VD: setter và getter:
+            class Person{
+                    private Stringname;
+                    public void setName(String name){
+                    this.name = name;
+                    }
+                    public String getName(){
+                    return this.name;
+                    }
+                    }
+                    
+                    
+                    /*****************************************************************************/
+                    
+     14/3               
+                    
+Đọc tìm hiểu và demo:
+
++ access modifier trong Java: - Là các từ dùng trước các khai báo của một class, biến hay method để thể hiện khả năng truy cập của class, biến hay method.
+                              - Với class có hai loại Access Modifier là public và default     
+                              -Nhưng vs biến và method có 4 phạm vi truy cập của AccessModifier như sau:
+                                  1. private : có quyền truy cập trong phạm vi class.
+                                     VD: public class Demo1 {
+                                              private int sum (int a, int b){
+                                                  return a + b;
+                                              }
+                                          }
+                                  2. default : nếu không khai báo modifier nào thì nó chính là trường hợp mặc định, và phạm vi truy cập trong 1 package.
+                                    VD: public class Demo1 {
+                                               int sum (int a, int b){
+                                                  return a + b;
+                                              }
+                                          }
+                                  3. protected : phạm vi truy cập trong 1 package .
+                                    VD: public class Demo1 {
+                                                protected int sum (int a, int b){
+                                                    return a + b;
+                                                }
+                                            }
+                                  4. public : phạm vi truy cập trong toàn bộ projects.
+                                    VD: public class Demo1 {
+                                                public int sum (int a, int b){
+                                                    return a + b;
+                                                }
+                                            }
+
+
++ Biến static trong java: -Biến static còn đc gọi là biến của lớp (class variable).
+                          - Chúng không gắn với bất kỳ đối tượng nào mà chỉ gắn vs lớp đối tượng.
+                          - Dùng chung cho các đối tượng thuộc lớp đó.
+                          -Cú pháp khai báo biến static: modifier static data_type variable_name;
+                            VD: public static String name = "Hoàn";
+                            
++ Nested class là gì? - Là 1 class được khai báo bên trong 1 class khác.
+                      - Được chia thành hai loại: static nested classes và non-static nested class.
+                        + Static Nested Classes: là class được khai báo dạng static bên trong một class khác.
+                            VD: class OuterClass {
+                                      class StaticInnerClass {
+                                     
+                                      }
+                                  }
+                        + non-static nested clas: bao gồm inner classes, local classes và anynomous classes.
+                            .inner class: là khai báo 1 class không phải dạng static bên trong 1 class khác.
+                               VD: public class OuterClass {
+                                          class InnerClass {
+                                         
+                                          }
+                                      }
+                                      
+                            .local classes: khai báo class bên trong một method khác:
+                                VD: public class OuterClass {
+                                          public String sayHello(String name) {
+                                                class WelcomeMessage {
+                                                }
+                                             }
+                                          }
+                                          
+                           .anyomous class: được khai báo bên trong class hoặc method mà không có tên cụ thể (không hiểu đc) 
+                           
+                           
++ Biến local: -Biến local được khai báo trong các phương thức, hàm contructor hoặc trong các block.
+              -Biến local được tạo bên trong các phương thức, contructor, block và sẽ bị phá hủy khi kết thúc các phương thức, contructor và block.
+              -Không được sử dụng "access modifier" khi khai báo biến local.
+              -Các biến local được lưu trên vùng nhớ stack của bộ nhớ.
+              -Bạn cần khởi tạo giá trị mặc định cho biến local trước khi có thể sử dụng.
+                  VD: public class Demo1 {
+                              public void sumNumber(){
+                                  int a = 10; //biến local
+                                  System.out.println(a);
+                              }
+                              
+ + Biến instance (biến toàn cục): - Được khai báo trong một lớp(class), bên ngoài các phương thức, constructor và các block.
+                                  - Biến instance được lưu trong bộ nhớ heap.
+                                  -Biến instance được tạo khi một đối tượng được tạo bằng việc sử dụng từ khóa “new” và sẽ bị phá hủy khi đối tượng bị phá hủy.
+                                 - Biến instance có thể được sử dụng bởi các phương thức, constructor, block, ... Nhưng nó phải được sử dụng thông qua một đối tượng cụ                                                  thể.
+                                  - Bạn được phép sử dụng "access modifier" khi khai báo biến instance, mặc định là "default".
+                                 - Biến instance có giá trị mặc định phụ thuộc vào kiểu dữ liệu của nó. Ví dụ nếu là kiểu int, short, byte thì giá trị mặc định là 0,                                      kiểu double thì là 0.0d, ... Vì vậy, bạn sẽ không cần khởi tạo giá trị cho biến instance trước khi sử dụng.
+                                 - Bên trong class mà bạn khai báo biến instance, bạn có thể gọi nó trực tiếp bằng tên khi sử dụng ở khắp nới bên trong class đó.
+                                    instance và biến local, biến static  trong java           
+                                      VD:public class Name {
+                                                   public String fisrtName;
+
+                                                }
++ Biến static: -Biến static được khai báo trong một class với từ khóa "static", phía bên ngoài các phương thức, constructor và block.
+              -Sẽ chỉ có duy nhất một bản sao của các biến static được tạo ra, dù bạn tạo bao nhiêu đối tượng từ lớp tương ứng.
+              -Biến static được lưu trữ trong bộ nhớ static riêng.
+              -Biến static được tạo khi chương trình bắt đầu chạy và chỉ bị phá hủy khi chương trình dừng.
+              -Giá trị mặc định của biến static phụ thuộc vào kiểu dữ liệu bạn khai báo tương tự biến instance.
+              -Biến static được truy cập thông qua tên của class chứa nó, với cú pháp: TenClass.tenBien.
+              -Trong class, các phương thức sử dụng biến static bằng cách gọi tên của nó khi phương thức đó cũng được khai báo với từ khóa "static"                                            
