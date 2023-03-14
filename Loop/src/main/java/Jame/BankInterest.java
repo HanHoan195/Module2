@@ -1,3 +1,5 @@
+package Jame;
+
 import java.util.Scanner;
 
 public class BankInterest {

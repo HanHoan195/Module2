@@ -1,3 +1,5 @@
+package Jame;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -5,7 +7,7 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         int choice = -1;
         while (choice != 0){
-            System.out.println("Menu");
+            System.out.println("Jame.Menu");
             System.out.println("1. Draw triangle");
             System.out.println("2. Draw square");
             System.out.println("3. Draw rectangle");
