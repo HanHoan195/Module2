@@ -178,4 +178,94 @@ https://www.youtube.com/watch?v=tcGNKqhu3GE
               -Biến static được tạo khi chương trình bắt đầu chạy và chỉ bị phá hủy khi chương trình dừng.
               -Giá trị mặc định của biến static phụ thuộc vào kiểu dữ liệu bạn khai báo tương tự biến instance.
               -Biến static được truy cập thông qua tên của class chứa nó, với cú pháp: TenClass.tenBien.
-              -Trong class, các phương thức sử dụng biến static bằng cách gọi tên của nó khi phương thức đó cũng được khai báo với từ khóa "static"                                            
+              -Trong class, các phương thức sử dụng biến static bằng cách gọi tên của nó khi phương thức đó cũng được khai báo với từ khóa "static"     
+              
+              
+                            **************************************************************************
+     15/3
++ Kế thừa là gì? 
+   - Kế thừa trong java là sự liên quan giữa hai class với nhau, trong đó có class cha (superclass) và class con (subclass). Khi kế thừa class con được hưởng tất cả các phương thức và thuộc tính của class cha. Tuy nhiên, nó chỉ được truy cập các thành viên public và protected của class cha. Nó không được phép truy cập đến thành viên private của class cha.
+   - Constructor không đc kế thừa 
+   - Lớp con có thể gọi contructor của lớp cha
+   - Lớp con có thể định nghĩa thêm các thuộc tính và phương thức mới
+   - Java không cho phép đa kế thừa
+   -Sử dụng từ khóa extends để kế thừa.
+          VD:    class Subclass-name extends Superclass-name {  
+                         //methods and fields
+              }             
+   - Có ba kiểu kế thừa: Đơn kế thừa(Single) : Một lớp chỉ kế thừa từ một lớp cha
+                                  
+                         Kế thừa nhiều cấp( Multilevel): Một lớp kế thừa từ một lớp cha , lớp cha lại kế thừa lớp khác trên nó
+                            
+                         Kế thừa thứ bậc( Hierarchical): Một lớp cha có nhiều lớp con khác nhau vs nhiều level khác nhau           
++ override là gì?
+      - Overiding(ghi đè phương thức) là cơ chế cho phép lớp con định nghĩa lại các phương thức đã đc định nghĩa trước đó ở lớp cha
+      - Phương thức override ở lớp con có cùng tên, cùng danh sách tham số và kiêu dữ liệu trả về so vs phương thức ở lớp cha
+      - Phương thức ở lớp con phải có access modifier có level bằng hoặc cao hơn so với phương thức ở lớp cha
+      - Từ khóa override đc sử dụng để ghi đè phương thưsc
+      - @Override có thể đc sử dụng để đánh dấu phương thức ghi đè
+      
++ overloading là gì?
+       - Overloading (nạp chồng phương thức) trong java xảy ranếu một lớp có nhiều phương thức có tên giống nhau nhưng khác nhau về kiểu dữ liệu hoặc số lượng            các tham số
+       - Lợi ích: giúp tăng khả năng đọc hiểu chương trình
+       - Có hai cách nạp chồng phương thức: 1 Thay đổi số lượng tham số:
+                                               VD:class Adder{  
+                                                        static int add(int a,int b){return a+b;}  
+                                                        static int add(int a,int b,int c){return a+b+c;}  
+                                                    } 
+                                            2 Thay đổi kiểu dữ liệu của tham số:
+                                              VD: class Adder{  
+                                                    static int add(int a, int b){return a+b;}  
+                                                    static double add(double a, double b){return a+b;}  
+                                                }
+                                            
++ Từ khóa final áp dụng cho lớp và phương thức để ngăn ngừa việc kế thừa và ghi đè phương thức
+    VD: public final class Animal{// áp dụng cho lớp
+                }
+                public class Circle{
+                public final voiddisplay(){// áp dụng cho phương thức
+                }
+                }
+                
++ Đa hình trong kế thừa :-  Polymorphism(Đahình) làcơchếchophépmộtbiếnthuộc kiể udữ liệu cha có thể trỏ đến một đối tượng thuộc lớp con
+                         - Khi khai báo một lớp,đồng nghĩa với tạo ra một kiểu dữ  liệu mới
+                         - Khi một lớp con kế thừa lớp cha thì kiểu dữ liệu của lớp cha được gọi là supertype, kiểu dữ liệu của lớp con được gọi là subtype
+                            VD: class Polygon {
+                                          //phương thức render của lớp Polygon
+                                          public void render() {
+                                            System.out.println("Rendering Polygon...");
+                                          }
+                                        }
+
+                                        class Square extends Polygon {
+                                          //ghi đè phương thức render
+                                          @Override
+                                          public void render() {
+                                            System.out.println("Rendering Square...");
+                                          }
+                                        }
+
+                                        class Circle extends Polygon {
+                                          //ghi đè phương thức render
+                                          @Override
+                                          public void render() {
+                                            System.out.println("Rendering Circle...");
+                                          }
+                                        }
+
+                                        class Main {
+                                          public static void main(String[] args) {
+                                            // create an object of Square
+                                            Square s1 = new Square();
+                                            s1.render();
+
+                                            // create an object of Circle
+                                            Circle c1 = new Circle();
+                                            c1.render();
+                                          }
+                                        }
++ toString() : đc sử dụng để trả về một chuỗi mô tả đối tượng
+      VD:public String toString() {
+    return getClass().getName()+"@"+Integer.toHexString(hashCode());
+} 
+                            
