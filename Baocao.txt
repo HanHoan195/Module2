@@ -269,45 +269,4 @@ https://www.youtube.com/watch?v=tcGNKqhu3GE
     return getClass().getName()+"@"+Integer.toHexString(hashCode());
 } 
                             *****************************************************************************************************
-                            17/3
-
-+ Vì sao trong Java không cho đa kế thừa:- VÌ java được thiết kế với nhiều cải tiến trong đó sự đơn giản là một trong những điều quan trọng. Việc cho                                                                 phép đa kế thừa sẽ mang đến nhiều hệ lụy, khiến cho code trở nên mơ hồ.
-
-+ Lớp abstract là gì:- Abstract Class có nghĩa là một lớp trừu tượng. Abstract Class là một loại lớp trong OOP – Lập trình hướng đối tượng. Abstract Class khai báo một                        hay nhiều method trừu tượng. Chúng có thể có cả method trừu tượng và method cụ thể. Một lớp bình thường không thể có method trừu tượng. Điều này                        có nghĩa là một abstract class phải chứa ít nhất một method trừu tượng. 
-                     - Một method trừu tượng là một method được khai báo không có triển khai (không có dấu ngoặc nhọn và kết thúc là một dấu chấm phẩy).
-                     - Một Abstract Class không thể tạo đối tượng nhưng có thể bao gồm lớp con. Khi một lớp trừu tượng bao gồm các lớp con, lớp con thường cung cấp                            triển khai cho tất cả các method trừu tượng của lớp cha. Ngoài ra, lớp trừu tượng có thể có trường động và trường tĩnh. Tuy nhiên, nếu lớp con                          không triển khai cho lớp cha, nó cũng sẽ là một lớp trừu tượng.
-
-+ Phương thức abstract là gì:- Một phương thức được khai báo là abstract và không có trình triển khai thì đó là phương thức trừu tượng.
-                             - Nếu bạn muốn một lớp chứa một phương thức cụ thể nhưng bạn muốn triển khai thực sự phương thức đó để được quyết định bởi các lớp con,                                  thì bạn có thể khai báo phương thức đó trong lớp cha ở dạng abstract.
-                             - Từ khóa abstract được sử dụng để khai báo một phương thức dạng abstract. Một phương thức abstract không có thân phương thức.
-                             - Phương thức abstract sẽ không có định nghĩa, được theo sau bởi dấu chấm phảy, không có dấu ngoặc nhọn theo sau:
-                                    VD: abstract void printStatus();
-
-+ Khi nào sử dụng lớp abstract: - Khi một nhóm đối tượng có cùng bản chất kế thừa từ một class thì sử dụng abstract class.
-
-
-+ Các tính chất của lớp abstract: - Không thể tạo đối tượng của lớp abstract.
-                                  - Lớp abstract có thể có các thuộc tính và phương thức bình thường.
-                                  - Một lớp chứa phương thức abstract thì lớp đó phải là abstract.
-                                  - Một lớp không phải là abstract kế thừa từ một lớp cha abstract thì phải implement tất cả các phương thức abstract của lớp cha.
-                                  - Một lớp abstract kế thừa từ một lớp cha abstract thì có thể không implement các phương thức abstract của lớp cha.
-                                  - Lớp abstract không thể là final.
-                                  - Phương thức abstrac thì không thể là final.
-                                  - Mức truy cập các hàm của abstract phải ở public hoặc protected để lớp kế thừa có thể định nghĩa lại và các thuộc tính của lớp                                           abstract không được khai báo abstract.
-                                  
-+ Interface là gì: - Là một cấu trúc tương tự như lớp, nhưng chỉ chứa các hằng số và abstract method.
-                   - Interface quy định các hành vi chung cho các lớp triển khai nó.
-                   - Sử dụng từ khóa interface để định nghĩa interface.
-                   - Cú pháp: modifier interface InterfaceName {}
-                      VD: public interface Flyable{}
-
-+ Các tính chất của interface: - Định nghĩa interface tạo ra một kiểu dữ liệu mới.
-                               - Không thể tạo đối tượng của interface
-                               - Không thể chứa các phương thức không abstract.
-                               - Khi một lớp triển khai interface thì cần triển khai tất cả các phương thức đc khai báo trong interface đó.
-                               - Interface có thể đc thiết kế để khai báo các phương thức chung cho các lớp không liên quan vs nhau (khác vs abstract class đc kế thừa                                    bởi các lớp có liên quan với nhau).
-                               - Interface bổ sung cho việc java không hỗ trợ đa kế thừa.
-
-+ Khi nào dùng abstract khi nào dùng interface:
-                    - Khi một nhóm đối tượng có cùng bản chất kế thừa từ một class thì sử dụng abstract class.
-                    - Khi một nhóm đối tượng không có cùng bản chất nhưng chúng có hành động giống nhau thì sử dụng interface.
+                            
