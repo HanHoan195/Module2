@@ -5,7 +5,7 @@ public class Cylinder extends Circle{
 
     public Cylinder(){
         //ở đây mặc định nó gọi đi đâu?
-        //gọi lên lớp object
+        //gọi lên hàm khởi tạo lớp cha
     }
     public Cylinder(float radius, String color, float heigth){
         //C1: super(radius, color) cái này để lm gì?
