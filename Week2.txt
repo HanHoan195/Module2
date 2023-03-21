@@ -42,3 +42,50 @@
 + Khi nào dùng abstract khi nào dùng interface:
                     - Khi một nhóm đối tượng có cùng bản chất kế thừa từ một class thì sử dụng abstract class.
                     - Khi một nhóm đối tượng không có cùng bản chất nhưng chúng có hành động giống nhau thì sử dụng interface.
+                    
+                                --------------------------------------------------------------------
+                                
+                                
+                                21/3
+                                
+                                
++ Generics trong Java: là một cách để xác định các kiểu cụ thể cho các lớp và phương thức trong ngữ cảnh khác nhau
+    - Lớp generic là một lớp có thể tham chiếu bất kỳ đối tượng nào
+    -Quy ước đặt tên tham số:
+        1.  T - Type
+        2.  E - Element
+        3.  K - Key
+        4.  N - Number
+        5.  V - Value
+        
+          VD:  class MyGeneric<T>{
+                        T obj;
+                        void add(T obj){
+                            this.obj = obj;
+                        }
+                        T get(){
+                            return obj;
+                        }
+                    }
+                    
+     - Phương thức generic: có thể chấp nhận bất kỳ kiểu đối số nào   
+     
+           VD:    public static <E> void printArray(E[] elements) {
+                        for (E element : elements) {
+                            System.out.print(element + " ");
+                        }
+                        System.out.println();
+                    }
+
+                    public static void main(String args[]) {
+                        Integer[] intArray = { 10, 20, 30, 40, 50 };
+                        Character[] charArray = { 'J', 'A', 'V', 'A' };
+
+                        System.out.print("In mảng số nguyên: ");
+                        printArray(intArray);
+
+                        System.out.print("In mảng ký tự: ");
+                        printArray(charArray);
+                    }
+                    
+      -Ký tự đại diện trong generic:              
