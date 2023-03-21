@@ -48,7 +48,8 @@
                                 
                                 21/3
                                 
-                                
+  *  GENERIC
+  
 + Generics trong Java: là một cách để xác định các kiểu cụ thể cho các lớp và phương thức trong ngữ cảnh khác nhau
     - Lớp generic là một lớp có thể tham chiếu bất kỳ đối tượng nào
     -Quy ước đặt tên tham số:
@@ -77,15 +78,70 @@
                         System.out.println();
                     }
 
-                    public static void main(String args[]) {
-                        Integer[] intArray = { 10, 20, 30, 40, 50 };
-                        Character[] charArray = { 'J', 'A', 'V', 'A' };
-
-                        System.out.print("In mảng số nguyên: ");
-                        printArray(intArray);
-
-                        System.out.print("In mảng ký tự: ");
-                        printArray(charArray);
-                    }
+                  
                     
-      -Ký tự đại diện trong generic:              
+      -Ký tự đại diện trong generic:-Trong Generic, dấu chấm hỏi (?) được gọi là một đại diện (wildcard), nó là kiểu không xác định.
+                                    -Tùy vào ví trí của Wildcard mà nó sẽ có những ý nghĩa khác nhau:
+                                    -Collection<?>: mô tả một tập hợp chấp nhận tất cả các loại đối số (chứa mọi kiểu đối tượng).
+                                    -List<? extends Number>: mô tả một danh sách, nơi mà các phần tử là kiểu Number hoặc kiểu con của Number.
+                                    -Comparator<? super String>: Mô tả một bộ so sánh (Comparator) mà thông số phải là String hoặc cha của String.      
+            VD:  public class GenericTest5 {
+                          // tao phuong thuc chi chap nhan tham so la lop con cua Shape
+                          public static void drawShapes(List<? extends Shape> lists) {
+                              for (Shape s : lists) {
+                                  s.draw();// goi phuong thuc cua lop Shape boi lop con
+                              }
+                          }
+                          
+      - Các kiểu generic: 1.Tạo class generic vs tham số generic: VD: class Dictionary<K, V>
+                          2.Thừa kế lớp generic: Một class mở rộng từ một class Generics, nó có thể quy định kiểu cho tham số Generics, giữ nguyên các tham số Generics                                                   hoặc thêm các tham số Generics.
+                                +Các quy định kiểu cho tham số:chúng ta tái sử dụng class, VD: class Book extends Dictionary<String, String> 
+                                +Quy định giữ nguyên tham sô: VD: class Book<K, V> extends Dictionary<K, V>{}
+                                +Chúng ta có thể vừa quy định trước 1 kiểu cụ thể vừa giữ nguyên tham số generic
+                                    VD:class Book<V> extends Dictionary<String, V> {
+                                                public Book(String key, V value) {
+                                                    super(key, value);
+                                                }
+                                +  Cách thêm các tham số Generics vào 1 Class generic khác
+                                        VD:  class Book<K, V, I> extends Dictionary<K, V> {
+                                                          private I info; // khởi tạo thêm tham số generic 
+
+                                                          public Book(K key, V value) {
+                                                              super(key, value);
+                                                          }
+
+                                                          public Book(K key, V value, I info) {
+                                                              super(key, value);
+                                                              this.info = info; // truyền Kiểu generic mới vào 
+                                                          }
+                          3. Generic interface: Chúng ta khởi tạo 1 interface sau đó để 1 class implements lên là chúng ta đã có thể sử dụng.
+                                    VD: interface writer<T> {
+                                              void update(T obj);
+                                              void delete(T obj);
+                                              void write(T obj);
+                                          }
+                                          class Book<T> implements writer<T>
+                                          
+   *EQUALS
+   
+   -Khi so sánh hai đối tượng với nhau Java gọi phương thức equal() của chúng trả về true nếu hai đói tượng bằng nhau trả về false nếu hai đối tượng khác nhau
+   -Lưu ý: phép so sánh khi sử dụng phương thức equals và toán tử == là khác nhau.
+          + Phương thức equals đc thiết kế để so sánh hai đối tượng vè mặt ngữ nghĩa (bằng cách so sánh các thành viên dữ liệu của lớp)
+          + Toán tử == chỉ so sánh hai đối tượng về mặt kỹ thuật (bằng cách so sánh các tham chiếu của chúng nghĩa là địa chỉ bộ nhớ)
+                  VD: public static void main(String[] args) {
+                              String s1 = new String("This is a string");
+                              String s2 = new String("This is a string");
+
+                              System.out.println("s1 == s2: " + (s1 == s2));
+                              System.out.println("s1.equals(s2): " + (s1.equals(s2)));
+                          }
+                          
+*HASHCODE
+
+- Các đối tượng như hashMAp hashTable sử dụng các đối tượng key để tìm kiếm các đối tượng value tương ứng. Và để tối ưu cho việc tìm kiếm, Java sử dụng các hash value 
+  lấy từ phương thức hashCode() của các đối tượng key ddeeer gom nhóm các đối tượng này trong những cái goi là bucket. Mỗi bucket tương ứng vs một value tương ứng
+- Khi tìm kiếm một đối tượng bất kỳ trong hashMap hay hashTable, đầu tiên Java sẽ lấy hash value của đối tượng key mà chúng ta muốn tìm kiếm. Sau đó nó sẽ trả về bucket để xem giá trị của hash value có trùng vs bucket nào hay không. Nếu thỏa mãn  một bucket nào đó thì Java sẽ trả về giá trj của đối tượng value mà chúng ta muốn tìm kiếm.
+- Nhiều đối tượng có thể có cùng hash value, và do đó chúng có thể nằm chung một bucket. Trong trường hợp này, Java sẽ sử dụng tiếp phương thức equals() để tìm chính xác đối tượng value mà chúng ta muốn tìm kiếm.
+- Ở đây chúng ta có một khái niệm gọi là contract giữa phương thức equals() và phương thức hashCode() đó là:
+      Nếu hai đối tượng là bằng nhau thì chúng phải có cùng hashCode().
+      Nếu hai đối tượng có cùng hashCode() thì chúng có thể bằng nhau hoặc là không.
