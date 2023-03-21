@@ -1,0 +1,39 @@
+Định nghĩa 1 đối tượng trung gian để so sánh hai hình
+
+public class ComparatorGeometricByArea implements Comparator<Geometric> {
+
+//phải ghi đè lại phương thức compare của lớp object
+    @Override
+    public int compare(Geometric o1, Geometric o2) {
+        if (o1.getArea() > o2.getArea()) {
+            return 1;  // o1 > o2
+        } else if (o1.getArea() == o2.getArea()) {
+            return 0; // o1 = 02
+            }else
+            return -1; // o1 < o2
+    }  
+       
+                  
+          //tạo đối tượng comparator so sánh theo diện tích
+        Comparator comparator = new ComparatorGeometricByArea();
+        
+        // dùng  Arrays.sort để sắp xếp mảng 
+        Arrays.sort(geometrics, comparator);
+        printArray(geometrics); 
+        
+        //để sắp xếp đối tượng
+        public class Employee implements Comparable<Employee> {
+        
+        
+        
+        //ghi đè lại compareTo để so sánh
+            @Override
+    public int compareTo(Employee o) {
+        if (this.age > o.getAge()) {
+            return 1;
+        } else if (this.age == o.getAge()) {
+            return 0;
+        }else
+            return -1;
+    }
+}
