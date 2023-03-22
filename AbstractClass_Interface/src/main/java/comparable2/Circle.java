@@ -1,9 +1,9 @@
-package comparable_;
+package comparable2;
 
 public class Circle {
-    private float radius = 1;
+    private float radius = 3;
     private String color = "red";
-    private boolean filled = true;
+    private boolean filled;
 
     public Circle(){
 
@@ -13,6 +13,10 @@ public class Circle {
         this.color = color;
         this.filled = filled;
     }
+    public Circle(float radius){
+        this.radius = radius;
+    }
+
 
     public void setColor(String color) {
         this.color = color;
@@ -29,21 +33,17 @@ public class Circle {
     public float getRadius() {
         return radius;
     }
-
-    public boolean isFilled() {
-        return filled;
-    }
-
-    public void setFilled(boolean filled) {
-        this.filled = filled;
-    }
     public float getArea(){
         return (float) (Math.PI * radius * radius);
     }
+    public double getPerimeter() {
+        return 2 * radius * Math.PI;
+    }
     @Override
     public String toString(){
-        return String.format("Radius: %s Color: %s is filled %s",radius, color,filled);
+        return String.format("Radius: %s Color: %s Area %s",radius, color,getArea());
     }
+
 
     public static void main(String[] args) {
         Circle circle = new Circle(3,"red",false);

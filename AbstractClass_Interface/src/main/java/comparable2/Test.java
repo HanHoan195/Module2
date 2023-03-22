@@ -1,24 +1,8 @@
-package comparable_;
+package comparable2;
 
 import java.util.Arrays;
 
-public class ComparableCircle extends Circle implements Comparable<ComparableCircle>{
-    public ComparableCircle(){
-
-    }
-    public ComparableCircle(float radius){
-        super();
-    }
-    public ComparableCircle(float radius,String color, boolean filled){
-        super(radius, color, filled);
-    }
-
-    @Override
-    public int compareTo(ComparableCircle o) {
-       if(getRadius()> o.getRadius()) return 1;
-       else if (getRadius() < o.getRadius()) return -1;
-       else return 1;
-    }
+public class Test {
     public static void main(String[] args) {
         ComparableCircle[] circles = new ComparableCircle[3];
         circles[0] = new ComparableCircle(3.6F);
@@ -29,6 +13,7 @@ public class ComparableCircle extends Circle implements Comparable<ComparableCir
         for (ComparableCircle circle : circles){
             System.out.println(circle);
         }
+
         Arrays.sort(circles);
 
         System.out.println("After-sorted: ");
