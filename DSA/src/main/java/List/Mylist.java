@@ -33,5 +33,11 @@ public class Mylist<E>{
         }
         return (E) elements[i];
     }
+    int index = 2;
+    public void remove(int index){
+        for(int i = index; i< elements.length;i++){
+            elements[index] = elements[index + 1];
+        }
+    }
 
 }
