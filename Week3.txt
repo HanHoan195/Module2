@@ -1,0 +1,35 @@
+27/3
+
+STACK(Ngăn xếp)
+- Là một cấu trúc dữ liệu danh sách, trong đó việc và lấy các phần tử đc thực hiện theo quy tắc FILO(Fisrt-In/Last-Out) hoặc LOFI(Last-Out/Fisrt-In) 
+- Lớp stack cung cấp các phương thức thêm (push) và loại bỏ (pop) phần tuwr từ đỉnh của stack cũng như phương thức truy suất (peek) phần tử trên đỉnh của stack mà không loại bỏ nó
+- VD: + Tạo danh sách:
+              Stack<Integer> stack = new Stack<>();
+      + Thêm phần tử (push): 
+              stack.push();
+      + Xóa phần tử (pop):
+              int top = stack.pop();
+              Nếu stack đang rỗng, phương thức pop() sẽ ra một ngoại lệ EmptyStackException.
+      + Truy suất phần tử (peek):
+              int top = stack.peek();
+              Nếu stack đang rỗng, phương thức peek() sẽ trả về giá trị null.
+              
+      + Hoạt động isFull(): kiểm tra xem ngăn xếp đã đầy hay chưa.
+      + Hoạt động isEmpty(): kiểm tra xem ngăn xếp là trống hay không.        
+       
+              
+QUEUE (Hàng đợi)
+- Là một cấu trúc dữ liệu danh sách trong đó việc thêm và lấy các phần tử đc thực hiện theo quy tắc FIFO(Fisrt-In/First-Out)
+- Các phương thức chính của interface Queue bao gồm:
+      VD: +Taọ 1 queue mới:
+                Queue<String> queue = new LinkedList<>();
+          
+          + add(E e): Thêm một phần tử vào cuối của queue, trả về true nếu thành công và ra một ngoại lệ nếu queue đã đầy ( IllegalStateException.).
+                queue.add();
+          + offer(E e): Thêm một phần tử vào cuối của queue, trả về true nếu thành công và false nếu queue đã đầy.
+                queue.offer();
+                
+          + remove(): Loại bỏ phần tử đầu tiên khỏi queue và trả về giá trị đó. Nếu queue rỗng,ra một ngoại lệ (NoSuchElementException.).
+                int element = queue.remove();
+          + poll(): Loại bỏ phần tử đầu tiên khỏi queue và trả về giá trị đó. Nếu queue rỗng, trả về null.
+                int element = queue.poll();
