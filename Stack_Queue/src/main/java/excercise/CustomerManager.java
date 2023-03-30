@@ -15,8 +15,12 @@ public class CustomerManager {
      customers.add(customer);
      customers.add(new Customer(2, "Đặng Nam Quốc Pháp", "phap@gmail.com", "Chùa Thiên Mụ", new Date()));
      customers.add(new Customer(3, "Châu Văn Nghĩa", "nghia@gmail.com", "Bến Thượng Hải", new Date()));
-     customers.add(new Customer(4, "Châu Văn Nghĩa", "nghia@gmail.com", "Bến Thượng Hải", new Date()));
-     customers.add(new Customer(5, "Đ", "nghia@gmail.com", "Bến Thượng Hải", new Date()));
+     customers.add(new Customer(4, "Hà Công Bằng", "bang@gmail.com", "Giới thượng Lưu", new Date()));
+     customers.add(new Customer(5, "Đạt G", "dat@gmail.com", "Khu đất 70 tỷ", new Date()));
+     customers.add(new Customer(6, "Bảo Thi", "thi@gmail.com", "Showbiz", new Date()));
+     customers.add(new Customer(7, "Bao Thanh Thiện", "thien@gmail.com", "Phủ Khai Phong", new Date()));
+     customers.add(new Customer(8, "Hưng Lê", "hung@gmail.com", "Bên trên tầng lầu", new Date()));
+     customers.add(new Customer(9, "Hiếu Mêxico", "hieu@gmail.com", "Mê-xi-cô", new Date()));
 
     }
 
@@ -30,10 +34,10 @@ public class CustomerManager {
     }
 
     public void showList(List<Customer> customers){
-        System.out.printf("%3s | %-20s | %-20s | %-20s | %-30s \n", "ID", "Name", "Email", "Address", "Date");
+        System.out.printf("%-3s | %-20s | %-20s | %-20s | %-30s \n", "ID", "Name", "Email", "Address", "Date");
         for (int i =0;i<customers.size();i++){
             Customer customer = customers.get(i);
-            System.out.printf("%3s | %-20s | %-20s | %-20s | %-30s \n",customer.getId(),customer.getFullName(), customer.getEmail(),
+            System.out.printf("%-3s | %-20s | %-20s | %-20s | %-30s \n",customer.getId(),customer.getFullName(), customer.getEmail(),
                     customer.getAddress(), customer.getCreateAt());
         }
     }
