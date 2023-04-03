@@ -1,0 +1,15 @@
+03/04
++ Kĩ thuật đổi tên biến và đổi tên phương thức: thay đổi tên biến hoặc phương thức để trở nên tốt hơn, dễ đọc có ý nghĩa tuân thủ coding convention
+    -Cách đổi tên trong inteiJ: 1. Shift + f6 
+                                2. Kích chuột phải ->refactor -> rename.  
+ 
++ Kĩ thuật tách biến: là kỹ thuật giúp đơn giản hóa các biểu thức và giúp dễ hiểu hơn
+                      -Cách tách biến: kích chuột phải -> refactor ->Extract -> variable 
+                      
++ Kĩ thuật tách hằng: -Trong nhiều trường hợp các giá trị " thần kỳ" (magic value) sẽ gây khó khăn cho việc đọc hiểu mã nguồn
+                      -Tách hằng giúp mang lại ý nghĩa cho các giá trị thần kỳ và mã nguồn dễ hiểu hơn
+                      -Cách tách hằng:  kích chuột phải -> refactor ->Extract -> constant
+                      
++ kĩ thuật tách phương thức: -Một phương thức quá dài ,quá phức tạp hoặc xử lý quá nhiều tác vụ sẽ dẫn đến khó hiểu, khó kiểm soát
+                             -Tách phương thức giúp cho các phương thức đọc dễ hiểu hơn, dễ kiểm soát hơn.
+                             -Cách tách phương thức:  kích chuột phải -> refactor ->Extract -> method
