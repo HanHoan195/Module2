@@ -13,3 +13,53 @@
 + kĩ thuật tách phương thức: -Một phương thức quá dài ,quá phức tạp hoặc xử lý quá nhiều tác vụ sẽ dẫn đến khó hiểu, khó kiểm soát
                              -Tách phương thức giúp cho các phương thức đọc dễ hiểu hơn, dễ kiểm soát hơn.
                              -Cách tách phương thức:  kích chuột phải -> refactor ->Extract -> method
+                                
+                                ----------------------------------------------------------------------
+04/04
+
+   * CÁC TÍNH CHẤT CỦA LẬP TRÌNH HƯỚNG ĐỐI TƯỢNG:
+    
+    +Tính đóng gói:
+        - public class DehaCompany {
+        - private long id;
+    
+    +Tính đa hình:
+        -   Employee ep1 = new Experience
+    
+    +Tính trừu tượng:
+    
+    +Tính kế thừa:
+        - public class Experience extends Employee{
+        - super(id, fullName, date, phone, email, type);
+    
+    +Override: 
+    
+            @Override
+         public String toString() {
+    
+    +Overloangding: 
+    
+       - public Employee()
+       - public Employee(long id, String fullName, Date birthDay, String phone, String email, EmployeeType employeeType) 
+       
+       
+* SOLID:
+ 1. Single responsibility principle: Một class chỉ nên giữ 1 trách nhiệm duy nhất
+        VD: public class ReportManager()
+            {
+               public void ReadDataFromDB();
+               public void ProcessData();       // class này thực hiện ba nhiệm vụ nên tách ra ba class 
+               public void PrintReport();
+            }
+2. Open/closed principle: -Có thể thoái mái mở rộng một class nhưng không đc sữa đổi bên trong class đó.
+                          -Theo nguyên lý này mỗi khi ta muốn thêm chức năng cho chương trình chúng ta nên viết class mới mở rộng claass cũ 
+                          bằng cách kế thừa hoặc sở hữu class cũ không nên sửa đổi class cũ.
+                          
+3. Liskov Substitution Principle: - Trong một chương trình các object của class con có thể thay thế class cha mà không lm thay đổi tính đúng đắn 
+                                    của chương trình.
+                                    
+4. Interface Segregation Principle: Thay vì dùng một interface lớn ta nên tách nhiều ỉnterface nhỏ vs nhiều mục đích cụ thể.   
+
+5. Dependency inversion principle: - Các module cấp cao không nên phụ thuộc vào module cấp thấp cả hai nên phụ thuộc vào abstraction.
+                                   - Interface(abstract) không nên phụ thuộc vào chi tiết mà ngược lại .Các class giao tiếp vs nhau thông qua interface
+                                   không phải thông qua implementation.
