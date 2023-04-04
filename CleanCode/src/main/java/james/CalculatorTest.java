@@ -1,5 +1,6 @@
-package com.codegym;
+package james;
 
+import james.Calculator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

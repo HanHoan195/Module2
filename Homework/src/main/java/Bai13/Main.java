@@ -11,7 +11,7 @@ public class Main {
             System.out.println("---MENU---");
             System.out.println("1. Xem danh sách");
             System.out.println("2. Thêm Nhân viên");
-            System.out.println("3. Xóa Nhân viên");
+            System.out.println("3. Sửa Nhân viên");
             System.out.println("4. Tìm nhân viên theo loại:");
             System.out.println("Nhập mục muốn chọn:");
             int choice = Integer.parseInt(scanner.nextLine());

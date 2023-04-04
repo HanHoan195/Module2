@@ -89,21 +89,30 @@ public class Company {
         String email = sc.nextLine();
         System.out.println("Nhập EXP Type");
         String type = sc.nextLine();
+        System.out.println("ExpinYear");
+        int year = Integer.parseInt(sc.nextLine());
+        System.out.println("ProSkill");
+        String skill = sc.nextLine();
 
         Comparator comparator = new ComparatorById();
         employees.sort(comparator);
          long maxId = employees.get(employees.size()-1).getId();
+         if (type == "Experience"){
+             Experience employee = new Experience();
+             employee.setId(maxId + 1);
+             employee.setFullName(name);
+             employee.setBirthDay(day);
+             employee.setPhone(phone);
+             employee.setEmail(email);
+             employee.setEmployeeType(EmployeeType.valueOf(type));
+             employee.setExpInYear(year);
+             employee.setProSkill(skill);
 
-         Employee employee = new Employee();
-         employee.setId(maxId + 1);
-         employee.setFullName(name);
-         employee.setBirthDay(day);
-         employee.setPhone(phone);
-         employee.setEmail(email);
-         employee.setEmployeeType(EmployeeType.valueOf(type));
+             employees.add(employee);
+             showEmployee();
+         }
 
-         employees.add(employee);
-         showEmployee();
+
 
     }
 
@@ -145,4 +154,99 @@ public class Company {
         }
         showEmployee(result);
     }
+
+
+
+    //bài sửa a Quang
+    public void showEmployees(){
+        System.out.printf("%-3s | %-20s | %-15s | %-10s | %-20s | %-10s \n"
+                ,"ID","FullName", "DayOfBirth","Phone","Email", "EmployeeType");
+        for (int i=0;i<employees.size();i++){
+            Employee e = employees.get(i);
+            System.out.printf("%-3s | %-20s | %-15s | %-10s | %-20s | %-10s \n"
+                    ,e.getId(),e.getFullName(), e.getBirthDay(),e.getPhone(),e.getEmail(), e.getEmployeeType());
+        }
+    }
+
+    public void addEmployees(){
+        System.out.println("Nhập thông tin cơ bản:");
+        System.out.println("Nhập họ và tên");
+        String name = sc.nextLine();
+        System.out.println("Nhập ngày tháng năm sinh");
+        Date day = new Date(Integer.parseInt(sc.nextLine()),Integer.parseInt(sc.nextLine()),Integer.parseInt(sc.nextLine()));
+        System.out.println("Nhập SĐT:");
+        String phone = sc.nextLine();
+        System.out.println("Nhập email:");
+        String email = sc.nextLine();
+
+        System.out.println("Bạn muốn thêm loại nào?");
+        System.out.println("Nhập 1. Thêm Experience");
+        System.out.println("Nhập 2. Thêm Fresher");
+        System.out.println("Nhập 3. Thêm Intern");
+
+        int actionAdd = Integer.parseInt(sc.nextLine());
+
+        Employee employee = null;
+
+        switch (actionAdd){
+            case 1:
+            {
+
+                inputEmployeeExperience(employee, employee.getFullName(), (Date) employee.getBirthDay(),employee.getPhone(),employee.getEmail()
+                ,EmployeeType.Experience);
+
+                employees.add(employee);
+                break;
+            }
+            case 2:
+            {
+
+                inputEmployeeFresher(employee, employee.getFullName(), (Date) employee.getBirthDay(),employee.getPhone(),employee.getEmail()
+                        ,EmployeeType.Experience);
+
+                break;
+
+            }
+        }
+        showEmployees();
+
+    }
+
+    private void inputEmployeeFresher(Employee employee, String fullName, Date birthDay, String phone, String email, EmployeeType experience) {
+        System.out.println("Nhập ngày tốt nghiệp");
+        Date dateGraduation = birthDay;
+        System.out.println("Nhập xếp loại tốt nghiệp");
+        String rankGraduation = sc.nextLine();
+        System.out.println("Tốt nghiệp trường");
+        String graduation = sc.nextLine();
+        employee = new Fresher(maxID()+1,fullName,birthDay,phone,email,EmployeeType.Fresher,dateGraduation,rankGraduation,graduation);
+
+        employees.add(employee);
+    }
+
+    public void inputEmployeeExperience(Employee employee,String fullName,Date date,String phone,
+                                        String email,EmployeeType employeeType){
+        System.out.println("Nhập năm kinh nghiệm:");
+        int expYear = Integer.parseInt(sc.nextLine());
+        System.out.println("Nhập kỹ năng chuyên môn:");
+        String proSkill = sc.nextLine();
+
+        employee = new Experience(maxID()+1, fullName, date,phone,email,
+                EmployeeType.Experience,expYear,proSkill);
+
+        employees.add(employee);
+    }
+
+    public long maxID(){
+        employees.sort(new ComparatorById());
+        return employees.get(employees.size()-1).getId();
+    }
+
+    public static void main(String[] args) {
+        Company company = new Company();
+        company.showEmployees();
+        company.addEmployees();
+    }
+
+
 }

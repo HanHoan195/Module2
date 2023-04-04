@@ -1,4 +1,4 @@
-package com.codegym;
+package james;
 
 public class Calculator {
     public static final char ADDITION = '+';
