@@ -21,12 +21,16 @@
     
     +Tính đóng gói:
         - public class DehaCompany {
-        - private long id;
-    
+                 private long id;
+                 private String fullName;
+                 private Date birthDay;
+                 private String phone;
+                 private String email
     +Tính đa hình:
         -   Employee ep1 = new Experience
     
     +Tính trừu tượng:
+        -public class Employee 
     
     +Tính kế thừa:
         - public class Experience extends Employee{
