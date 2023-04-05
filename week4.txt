@@ -67,3 +67,56 @@
 5. Dependency inversion principle: - Các module cấp cao không nên phụ thuộc vào module cấp thấp cả hai nên phụ thuộc vào abstraction.
                                    - Interface(abstract) không nên phụ thuộc vào chi tiết mà ngược lại .Các class giao tiếp vs nhau thông qua interface
                                    không phải thông qua implementation.
+
+*TRY/CATCH
+
++ Ngoai lệ là gì:- Ngoại lệ trong Java là một đối tượng đại diện cho một lỗi hoặc một sự kiện bất ngờ xảy ra khi chương trình chạy và làm                   gián đoạn luồng thực thi bình thường của chương trình.
+                 - Các loại Exception trong Java: 
+                      + Checked Exception: Là loại exception xảy ra trong lúc compile time. Có thể kể đến như: IOException,                                                             SQLException,…
+                      + Unchecked Exception: Các ngoại lệ không được kiểm tra tại thời điểm biên dịch, nhưng được kiểm tra trong thời                                                  gian chạy. Ví dụ như: ArithmeticException, NullPointerException, …
+                      +  Error: Không thể khôi phục được. Như: OutOfMemoryError, VirtualMachineError,…
+                      + Java cung cấp 5 từ khóa sử dụng để xử lý ngoại lệ đó là:
+                           - try: Sử dụng để chứa đoạn lệnh có thể gây ra ngoại lệ, nó phải được theo sau bởi khối catch hoặc finally
+                           - catch:	Sử dụng để xử lý ngoại lệ, các khối code để xử lý ngoại lệ sẽ được đặt trong đây
+                           - finally: Sử dụng để thực thi đoạn mã cần thiết của chương trình. Khối này sẽ luôn được thực thi
+                           - throw:	Sử dụng để ném ra ngoại lệ
+                           - throws	Sử dụng để khai báo ngoại lệ
+
++ Xử lý ngoại lệ với try/catch: 
+    - Cú pháp: try{
+                    //Khối lệnh có thể ném ra ngoại lệ
+                }catch(<Exception_class_name> e){
+                    //Code xử lý ngoại lệ
+                }
+
++ Xử lý ngoại lệ với try/finally:
+    - Cú pháp: try{
+                    //Khối lệnh có thể ném ra ngoại lệ
+                }finally{
+                    //Khối lệnh trong đây luôn được thực thi
+                }
+
++ Khối try/catch/finally:
+    - Cú pháp: try{
+                    //Khối lệnh có thể ném ra ngoại lệ
+                }catch(<Exception_class_name_1> e){
+                    //Code xử lý ngoại lệ 1
+                }catch(<Exception_class_name_2> e){
+                    //Code xử lý ngoại lệ 2
+                }finally{
+                    //Khối lệnh trong đây luôn được thực thi
+                }
+    
+
++ Các lệnh ném ngoại lệ: 
+-Lệnh throw: Từ khóa throw được sử dụng để ném ra ngoại lệ cụ thể. Thông thường nó được sử dụng với exception do người dùng tự định nghĩa
+    VD: System.out.println("Nhập tuổi của bạn:");
+            age = sc.nextInt();
+            //Tuổi không hợp lệ khi nhập số âm hoặc lớn hơn 200
+            if(age < 0 || age > 200)
+                throw new ArithmeticException("Tuổi không hợp lệ");
+
+- Lệnh throws: Từ khóa throws sử dụng để khai báo ngoại lệ. Nó được sử dụng chủ yếu với checked exception
+    VD: public void readFile() throws IOException{
+                    // Khai báo ngoại lệ
+                }
