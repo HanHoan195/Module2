@@ -82,14 +82,16 @@
                            - throw:	Sử dụng để ném ra ngoại lệ
                            - throws	Sử dụng để khai báo ngoại lệ
 
-+ Xử lý ngoại lệ với try/catch: 
++ Xử lý ngoại lệ với try/catch:- Khi một ngoại lệ xảy ra, trình biên dịch tìm một khối catch phù hợp trong các khối catch đi kèm. Trình tự tìm là lần lượt từ khối thứ                                       nhất đến khối cuối cùng, khối catch đầu tiên bắt được ngoại lệ đó sẽ được thực thi.
     - Cú pháp: try{
                     //Khối lệnh có thể ném ra ngoại lệ
                 }catch(<Exception_class_name> e){
                     //Code xử lý ngoại lệ
                 }
 
-+ Xử lý ngoại lệ với try/finally:
++ Xử lý ngoại lệ với try/finally:- Phần try và phần catch trong khối try/catch là những phần bắt buộc phải có. Ngoài ra, ta còn có thể lắp một phần có tên finally vào                                          làm phần cuối cùng của khối try/catch.
+                                 - Một khối finally là nơi ta đặt các đoạn mã phải được thực thi bất kể ngoại lệ có xảy ra hay không.
+                                 
     - Cú pháp: try{
                     //Khối lệnh có thể ném ra ngoại lệ
                 }finally{
