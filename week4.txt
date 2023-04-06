@@ -122,3 +122,143 @@
     VD: public void readFile() throws IOException{
                     // Khai báo ngoại lệ
                 }
+                    ------------------------------------------------------------------------------------
+                06/04
+ 
+*LÀM VIỆC VỚI FILE TRONG JAVA
+
+- Một số phương thức lớp File:
+       + exists() kiểm tra xem file có tồn tại hay không
+       + getName() lấy tên file (input-file.txt)
+       + getParent() lấy đường dẫn thư mục của file
+       + getPath() đường dẫn đầy đủ
+       + isDirectory() kiểm tra xem là thư mục hay không
+       + isFile() kiểm tra xem là file hay không
+       + length() cỡ file (byte)
+       + createNewFile() tạo ra file mới
+       + delete() xóa file
+       + list() lấy tên file, thư mục chứa trong đường dẫn
+       + mkdir() tạo thư mục    
+       + renameTo(File dest) đổi tên file
+     
+- Tạo file và viết nội dung vào file: Lớp Formatter (java.util.Formatter) có thể tạo ra file mới và dùng để viết nội dung vào file bằng phương thức format
+        VD: try {
+                Formatter f = new Formatter("C:\\sololearn\\test.txt");
+                f.format("%s %s %s", "1","John", "Smith \r\n");
+                f.close();
+            } catch (Exception e) {
+                System.out.println("Error");
+            }
+-Đọc nội dung file: Lớp Scanner kế thừa từ lớp Iterator được sử dụng để đọc nội dung file. Nếu đọc theo từng dòng dùng phương thức hasNextLine và nextLine kết hợp.
+        VD:   try {
+    	  File x = new File("C:\\xuanthulab.net\\test.txt");
+    	  Scanner sc = new Scanner(x);
+    	  String content = "";
+    	  while(sc.hasNextLine()) {
+    		  content += sc.nextLine()+"\r\n";
+    	  }
+  	      System.out.println(content);
+
+    	  sc.close();
+    	} catch (FileNotFoundException e) {
+    	  System.out.println("Error");
+    	}
+        
+*FILEREADER
+- Lớp FileReader trong java được sử dụng để đọc dữ liệu từ file. Nó trả về dữ liệu theo định dạng byte như lớp FileInputStream.
+- Khai báo của lớp FileReader: public class FileReader extends InputStreamReader
+- Các constructor của lớp FileReader:
+        + FileReader(String file): Nó mở file với tên file ở dạng string đã cho ở chế độ đọc. Nếu tập tin không tồn tại, nó ném ra ngoại lệ FileNotFoundException.
+        + FileReader(File file): Nó mở file với thể hiện của file đã cho ở chế độ đọc. Nếu tập tin không tồn tại, nó ném ra ngoại lệ FileNotFoundException.
+        
+- Các phương thức của lớp FileReader:
+        + int read():	Nó được sử dụng để trả về một ký tự trong mẫu ASCII. Nó trả về -1 vào cuối tập tin.
+        + void close():	Nó được sử dụng để đóng lớp FileReader.
+       VD: public class FileReaderExample {
+            public static void main(String args[]) throws Exception {
+                FileReader fr = new FileReader("D:\\testout.txt");
+                int i;
+                while ((i = fr.read()) != -1) {
+                    System.out.print((char) i);
+                }
+                fr.close();
+            } 
+            
+ *FILEWRITER
+ - Lớp FileWriter trong java được sử dụng để ghi các dữ liệu theo định dạng ký tự vào một file.
+ - Khai báo của lớp FileWriter: public class FileWriter extends OutputStreamWriter
+ - Các constructor của lớp FileWriter:
+        + FileWriter(String file):	Tạo ra một file mới với giá trị truyền vào là tên file.
+        + FileWriter(File file):	Tạo ra một file mới với giá trị truyền vào là đối tượng file.
+- Các phương thức của lớp FileWriter:
+        + void write(String text):	Nó được sử dụng để ghi string vào FileWriter.
+        + void write(char c):	    Nó được sử dụng để ghi char vào FileWriter.
+        + void write(char[] c):	    Nó được sử dụng để ghi mảng char vào FileWriter.
+        + void flush():	            Nó được sử dụng để xả dữ liệu của FileWriter.
+        + void close():     	    Nó được sử dụng để đóng FileWriter.
+        
+        VD: public class FileWriterExample {
+                public static void main(String args[]) {
+                    try {
+                        FileWriter fw = new FileWriter("D:\\testout.txt");
+                        fw.write("Welcome to java.");
+                        fw.close();
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                    System.out.println("Success...");
+                }
+            }        
+*BufferedWriter
+- Lớp BufferedWriter trong java được sử dụng để cung cấp bộ đệm cho các các thể hiện của lớp Writer. Nó giúp hiệu suất nhanh. Nó thừa kế lớp Writer. Các ký tự đệm được sử dụng để cung cấp việc ghi dữ liệu hiệu quả với các mảng đơn, các ký tự và chuỗi.
+- Khai báo của lớp BufferedWriter: public class BufferedWriter extends Writer
+- Các constructor của lớp BufferedWriter: 
+   + BufferedWriter(Writer wrt):Nó được sử dụng để tạo ra thể hiện của BufferedWriter có sử dụng kích thước mặc định                              cho một bộ đệm đầu ra.
+   + BufferedWriter(Writer wrt, int size):	Nó được sử dụng để tạo ra thể hiện của BufferedWriter mà sử dụng kích                                    thước quy định cho một bộ đệm đầu ra.
+- Các phương thức của lớp BufferedWriter:
+    + void newLine():	Nó được sử dụng để thêm một dòng mới với dấu xuống dòng.
+    + void write(int c):	Nó được sử dụng để ghi một ký tự duy nhất.
+    + void write(char[] cbuf, int off, int len):	Nó được sử dụng để ghi một phần của một mảng các ký tự.
+    + void write(String s, int off, int len):	Nó được sử dụng để ghi một phần của một chuỗi.
+    + void flush():	Nó được sử dụng để xả BufferedWriter .
+    + void close():	Nó được sử dụng để đóng BufferedWriter
+    
+    VD: public class BufferedWriterExample {
+                public static void main(String[] args) throws Exception {
+                    FileWriter writer = new FileWriter("D:\\testout.txt");
+                    BufferedWriter buffer = new BufferedWriter(writer);
+                    buffer.write("Welcome to java.");
+                    buffer.close();
+                    System.out.println("Success...");
+                }
+            }
+*BufferedReader
+- Lớp BufferedReader trong java được sử dụng để đọc văn bản từ một input stream dựa trên các ký tự (character stream). Nó có thể được sử dụng để đọc dữ liệu theo dòng (line by line) bằng phương thức readLine(). Nó giúp hiệu suất nhanh. Nó kế thừa lớp Reader.
+- Khai báo của lớp BufferedReader: public class BufferedReader extends Reader
+- Các constructor của lớp BufferedReader:
+        +BufferedReader(Reader rd):	Nó được sử dụng để tạo ra thể hiện của BufferedReader mà sử dụng kích thước                                         mặc định cho một bộ đệm đầu vào.
+       +BufferedReader(Reader rd, int size):Nó được sử dụng để tạo ra thể hiện của BufferedReader có sử dụng kích                                       thước quy định cho một bộ đệm đầu vào.
+       
+- Các phương thức của lớp BufferedReader:
+        +int read(): Nó được sử dụng để đọc ký tự vật duy nhất.
+        +int read(char[] cbuf, int off, int len):	Nó được sử dụng để đọc các ký tự thành một phần của một mảng.
+        +boolean markSupported():	Nó được sử dụng để kiểm tra input stream có hỗ trợ các phương thức mark() và                                                    reset() không.
+        +String readLine():	Nó được sử dụng để đọc một dòng văn bản.
+        +boolean ready():	Nó được sử dụng để kiểm tra liệu các input stream đã sẵn sàng để được đọc.
+        +long skip(long n):	Nó được sử dụng để bỏ qua n ký tự.
+        +void reset():	Nó định vị lại stream tại vị trí mà phương thức đánh dấu lần cuối được gọi vào input stream                                              này.
+        +void mark(int readAheadLimit):	Nó được sử dụng để đánh dấu vị trí hiện tại trong một stream.
+        +void close():	Nó đóng các dòng đầu vào và giải phóng bất kỳ tài nguyên hệ thống nào liên kết đến stream.
+            VD: public class BufferedReaderExample {
+                    public static void main(String args[]) throws Exception {
+                        FileReader fr = new FileReader("D:\\testout.txt");
+                        BufferedReader br = new BufferedReader(fr);
+
+                        int i;
+                        while ((i = br.read()) != -1) {
+                            System.out.print((char) i);
+                        }
+                        br.close();
+                        fr.close();
+                    }
+                }
