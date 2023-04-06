@@ -262,3 +262,4 @@
                         fr.close();
                     }
                 }
++ Phân biệt khi nào dùng FileReader và BufferedWriter
