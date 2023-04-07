@@ -262,4 +262,16 @@
                         fr.close();
                     }
                 }
-+ Phân biệt khi nào dùng FileReader và BufferedWriter
++ Phân biệt khi nào dùng FileReader và BufferedWriter:
+    - FileReader được sử dụng để đọc dữ liệu từ file. Nó đọc dữ liệu từ một file và trả về nó dưới dạng một chuỗi hoặc một mảng các ký tự.
+        VD:FileReader fr = new FileReader("input.txt");
+                    int i;
+                    while ((i = fr.read()) != -1) {
+                        System.out.print((char) i);
+                    }
+                    fr.close();
+    - BufferedWriter được sử dụng để ghi dữ liệu vào một file. Nó cho phép bạn ghi dữ liệu theo định dạng mà bạn mong muốn, ví dụ như ghi dữ liệu dưới dạng một chuỗi hoặc một mảng các ký tự.
+        VD: BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"));
+                bw.write("Hello World!");
+                bw.close();
+
