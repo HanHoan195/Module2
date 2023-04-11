@@ -275,3 +275,13 @@
                 bw.write("Hello World!");
                 bw.close();
 
+                            -------------------------------------------------------------------------------------------------
+         Multithread, Multitask là gì, Thread là gì                          
+* Multi-Tasking là khả năng chạy đồng thời nhiều chương trình cùng một lúc trên hệ điều hành
+* Multi-Threading là khả năng thực hiện đồng thời nhiều tiểu trình trong một chương trình.
+* Thread là đơn vị nhỏ nhất của mã thực thi mà đoạn mã đó thực hiện một nhiệm vụ cụ thể.
+    • Một ứng dụng có thể được chia nhỏ thành nhiều nhiệm vụ và mỗi nhiệm vụ có thể được giao cho một thread.
+    • Nhiều thread cùng thực hiện đồng thời được gọi là đa luồng(MultiThread)
+    • Các quá trình đang chạy dường như là đồng thời,nhưng thực ra nó không phải là như vậy.
+
+                            
