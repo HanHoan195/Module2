@@ -275,3 +275,17 @@
                 bw.write("Hello World!");
                 bw.close();
 
+                            -------------------------------------------------------------------------------------------------
+         Multithread, Multitask là gì, Thread là gì                          
+* Multi-Tasking là khả năng chạy đồng thời nhiều chương trình cùng một lúc trên hệ điều hành
+* Multi-Threading là khả năng thực hiện đồng thời nhiều tiểu trình trong một chương trình.
+* Thread là đơn vị nhỏ nhất của mã thực thi mà đoạn mã đó thực hiện một nhiệm vụ cụ thể.
+    • Một ứng dụng có thể được chia nhỏ thành nhiều nhiệm vụ và mỗi nhiệm vụ có thể được giao cho một thread.
+    • Nhiều thread cùng thực hiện đồng thời được gọi là đa luồng(MultiThread)
+    • Các quá trình đang chạy dường như là đồng thời,nhưng thực ra nó không phải là như vậy.
+
+*ĐỒNG BỘ:
+- Đồng bộ trong java (Synchronization in java) là khả năng kiểm soát truy cập của nhiều luồng đến bất kỳ nguồn tài nguyên dùng chung (shared resource) nào.
+- Vấn đề của đa luồng là thường xuyên có trường hợp nhiều luồng muốn truy cập cùng một nguồn tài nguyên vào cùng một thời điểm. Ví dụ một luồng muốn cập nhật, trong            khi luồng khác cố gắng xóa bỏ dữ liệu dẫn dến dữ liệu bị sai lệch. Trong trường hợp này, đồng bộ hóa là giải pháp cần thiết.
+- Đồng bộ hóa là hành động giới hạn số luồng được phép truy cập tới một nguồn tài nguyên xuống còn 1 luồng tại bất kỳ thời điểm nào. Nhờ đó, nghiệp vụ của chương trình         vẫn được nhất quán, trong khi vẫn tận dụng được ưu điểm về hiệu năng tới từ đa luồng.
+                            
