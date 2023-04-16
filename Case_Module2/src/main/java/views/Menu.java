@@ -62,6 +62,7 @@ public class Menu {
             try {
                 System.out.println("Chọn chức năng: ");
                 System.out.print("\t︻┳═一 ");
+//                System.out.println();
                 int choice = scanner1.nextInt();
                 switch (choice) {
                     case 1:
@@ -71,7 +72,7 @@ public class Menu {
                         productView.showDescriptionManager();
                         break;
                     case 3:
-                        productView.add();
+                        productView.addProduct();
                         break;
                     case 4:
                         productView.updateProduct();
@@ -118,28 +119,33 @@ public class Menu {
         System.out.println("             ║           [8] Quay lại                                  ║");
         System.out.println("             ║           [9] Thoát                                     ║");
         System.out.println("             ╚═════════════════════════════════════════════════════════╝");
+        System.out.println();
+
     }
 
     public static void menuCustomer() {
         System.out.println("             ╔═════════════CUSTOMER══════════════════════════════════════════╗");
+        System.out.println("             ║           ☏ WELCOME TO MOBILE ONLINE! ☏                      ║");
         System.out.println("             ║           [1] Hiển thị danh sách sản phẩm                     ║");
         System.out.println("             ║           [2] Hiển thị mô tả sản phẩm                         ║");
         System.out.println("             ║           [3] Tìm kiếm sản phẩm theo tên                      ║");
         System.out.println("             ║           [4] Tìm kiếm sản phẩm theo loại                     ║");
         System.out.println("             ║           [5] Sắp xếp sản phẩm theo giá tăng dần              ║");
         System.out.println("             ║           [6] Sắp xếp sản phẩm theo giá giảm dần              ║");
-        System.out.println("             ║           [7] Mua sản phẩm                                    ║");
+        System.out.println("             ║           [7] Đặt hàng                                        ║");
         System.out.println("             ║           [8] Quay lại                                        ║");
         System.out.println("             ║           [9] Thoát                                           ║");
         System.out.println("             ╚═══════════════════════════════════════════════════════════════╝");
+        System.out.println();
     }
 
-    public static void action() {
+    public static void  action() {
         do {
             menuMain();
             Scanner scanner1 = new Scanner(System.in);
             System.out.println("\nWHO ARE YOU??? ");
             System.out.print("\t︻┳═一 ");
+//            System.out.println();
             int choice = -1;
             try {
                 choice = Integer.parseInt(scanner1.nextLine());
@@ -174,19 +180,19 @@ public class Menu {
         System.out.println("║    [2] CUSTOMER       ║ ");
         System.out.println("║    [3] EXIT           ║ ");
         System.out.println("╚═══════════════════════╝");
+        System.out.println();
     }
 
     public static void customer() {
         menuCustomer();
         int choice = -1;
 
-        System.out.println("Chọn chức năng:");
+        System.out.println("Bạn muốn làm chi:");
         System.out.print("\t︻┳═一 ");
+//        System.out.println();
         try {
             choice = Integer.parseInt(scanner.nextLine());
-        } catch (NumberFormatException e) {
-            System.err.println("  ⚔ Lựa chọn phải là một số! ⚔");
-        }
+
         switch (choice) {
             case 1:
                 productView.showProductGuest();
@@ -207,7 +213,7 @@ public class Menu {
                 productView.sortDESC();
                 break;
             case 7:
-                paymentView.buy();
+                paymentView.order();
                 break;
             case 8:
                 action();
@@ -218,6 +224,9 @@ public class Menu {
             default:
                 System.out.println("⚔Chọn chức năng không đúng vui lòng chọn lại!⚔");
                 break;
+            }
+        } catch (NumberFormatException e) {
+            System.err.println("  ⚔ Lựa chọn phải là một số! ⚔");
         }
 
     }

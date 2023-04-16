@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static views.Menu.*;
+
 public class PaymentView {
     DecimalFormat format = new DecimalFormat("###,###,###" + " đ");
     Scanner scanner = new Scanner(System.in);
@@ -46,6 +48,7 @@ public class PaymentView {
         while (true) {
             System.out.println("Nhập ID sản phẩm cần mua: ");
             System.out.print("\t︻┳═一 ");
+//            System.out.println();
             try {
                 id1 = Integer.parseInt(scanner.nextLine());
                 if (id1 > 0) {
@@ -69,6 +72,7 @@ public class PaymentView {
         while (true){
             System.out.println("Nhập số lượng cần mua: ");
             System.out.print("\t︻┳═一 ");
+//            System.out.println();
             realQuantity = product.getQuantity();
             try {
                 quantity =Integer.parseInt(scanner.nextLine());
@@ -119,13 +123,14 @@ public class PaymentView {
                 list.add(payment);
             }
         }
-        option();
+//        option();
     }
 
     public void option(){
         System.out.println("\t\t\t\tNhập 1 để mua thêm sản phẩm");
         System.out.println("\t\t\t\tNhập 2 để xem tổng tiền");
         System.out.print("\t︻┳═一 ");
+//        System.out.println();
         int options = -1;
         try {
             options = Integer.parseInt(scanner.nextLine());
@@ -163,7 +168,7 @@ public class PaymentView {
         System.out.println();
         System.out.println(" ☛ Số tiền cần thanh toán: \t\t\t\t" + format.format(sum));
         System.out.println("═════════════════════════════════════════════════════════");
-        check();
+//        check();
     }
 
     public void check(){
@@ -171,6 +176,7 @@ public class PaymentView {
         System.out.println("Nhập 1 để thanh toán");
         System.out.println("Nhập 2 để mua lại");
         System.out.print("\t︻┳═一 ");
+//        System.out.println();
         int options = -1;
         try {
             options = Integer.parseInt(scanner.nextLine());
@@ -200,31 +206,37 @@ public class PaymentView {
         System.out.println("Nhập họ và tên:");
         System.out.println("*Lưu ý tên phải viết hoa chữ cái đầu");
         System.out.print("\t︻┳═一 ");
+//        System.out.println();
         name = scanner.nextLine();
         while (!ValidateUtils.isNameValid(name)) {
             System.out.println("Tên " + name + " không đúng định dạng." + " Vui lòng nhập lại!" );
             System.out.println("Nhập tên (vd: Hân Hoàn) ");
             System.out.print("\t︻┳═一 ");
+//            System.out.println();
             name = scanner.nextLine();
         }
 
         System.out.println("Nhập số điện thoại:");
         System.out.println("*Lưu ý số điện thoại bắt đầu bằng số 0 và có 10 - 11 số.");
         System.out.print("\t︻┳═一 ");
+//        System.out.println();
         phone = scanner.nextLine();
         while (!ValidateUtils.isPhoneValid(phone)) {
             System.out.println("Số " + phone + " của bạn không đúng định dạng. Vui lòng nhập lại! ");
             System.out.println("Nhập số điện thoại (vd: 0123456789)");
             System.out.print("\t︻┳═一 ");
+//            System.out.println();
             phone = scanner.nextLine();
         }
 
         System.out.println("Nhập địa chỉ (vd: Huế)");
         System.out.print("\t︻┳═一 ");
+//        System.out.println();
         address = scanner.nextLine();
         while (!ValidateUtils.isAddressValid(address)) {
             System.out.println("Nhập địa chỉ ");
             System.out.print("\t︻┳═一 ");
+            System.out.println();
             address = scanner.nextLine();
         }
 
@@ -241,17 +253,19 @@ public class PaymentView {
             productService.updateQuantity(a,b-c);
         }
         productService.checkExist();
-        System.out.println("Thanh toán thành công");
+        System.out.println("Đặt hàng thành công");
+        System.out.println();
         afterPay();
 
     }
     public void afterPay() {
-        System.out.println("Bạn có muốn kiểm tra thông tin thanh toán không?");
-        System.out.println("1. Để xem thông tin thanh toán");
-        System.out.println("2. Để quay lại menu");
-        System.out.println("3. Để thoát");
-        System.out.print("\t︻┳═一\n" +
-                "\n ");
+        System.out.println("Bạn có muốn kiểm tra lại thông tin thanh toán không?");
+        System.out.println("1. Kiểm tra lại thông tin đơn hàng");
+        System.out.println("2. Thanh toán");
+        System.out.println("3. Đặt lại hàng ");
+        System.out.println("4. Để thoát");
+        System.out.print("\t︻┳═一" );
+//        System.out.println();
         int options;
         try {
             options = Integer.parseInt(scanner.nextLine());
@@ -260,11 +274,14 @@ public class PaymentView {
                     showInformation();
                     break;
                 case 2:
-                    menu.customer();
+                    pay2();
                     break;
                 case 3:
+                    order();
+                    break;
+                case 4:
                     System.out.println("∼∼∼∼∼∼∼∼∼∼See you again∽∽∽∽∽∽∽∽∽∽\n\n");
-                    menu.exit();
+                    exit();
                     break;
                 default:
                     System.out.println("Nhập không đúng! Vui lòng nhập lại");
@@ -300,5 +317,72 @@ public class PaymentView {
             afterPay();
         }
 
+        public void order(){
+            buy();
+            pay();
+        }
+        public void pay2(){
+            System.out.println("Chọn hình thức thanh toán:");
+            System.out.println("1.Thanh toán qua thẻ");
+            System.out.println("2. COD");
+            System.out.print("\t︻┳═一" );
+            int choice = Integer.parseInt(scanner.nextLine());
+            try {
+                switch (choice){
+                    case 1:
+                        showTotal();
+                        System.out.println("Bạn vui lòng chuyển khoản đến:");
+                        System.out.println(" Agirbank \n 0123456789 \n TRAN HAN HOAN");
+                        System.out.println();
+                        Thread.sleep(2000);
+                        System.out.println("Thanh toán thành công!");
+                        System.out.println("Đơn hàng sẽ được giao trong vòng 3 - 5 ngày!");
 
+                        System.out.println();
+                        Thread.sleep(2000);
+                        afterPay2();
+                        break;
+                    case 2:
+                        System.out.println("Đặt hàng thành công! Đơn hàng sẽ được giao trong vòng 3 - 5 ngày!");
+                        afterPay2();
+                        break;
+                    default:
+                        System.out.println("Lựa chọn không đúng vui lòng chọn lại");
+                }
+            } catch (Exception e ){
+                System.out.println("Nhập vào phải là 1 số!");
+                pay2();
+            }
+
+        }
+
+        public void afterPay2(){
+            System.out.println("Bạn muốn tiếp tục không?");
+            System.out.println("1. Quay lại menu");
+            System.out.println("2. Thoát");
+            System.out.print("\t︻┳═一" );
+            int choice = Integer.parseInt(scanner.nextLine());
+            try {
+                switch (choice){
+                    case 1:
+                        customer();
+                        break;
+                    case 2:
+                        exit();
+                        break;
+                    default:
+                        System.out.println("Lựa chọn không đúng vui lòng nhập lại!");
+                        afterPay2();
+                        break;
+                }
+            } catch (Exception e){
+                System.out.println("Nhập vào phải là một số!");
+            }
+
+        }
+
+//    public static void main(String[] args) {
+//       PaymentView paymentView = new PaymentView();
+//       paymentView.order();
+//    }
 }

@@ -1,5 +1,6 @@
 package views;
 
+import model.Payment;
 import model.Product;
 import model.Status;
 import model.Type;
@@ -7,9 +8,7 @@ import service.ProductService;
 import utils.PriceSortASC;
 import utils.PriceSortDESC;
 
-import java.awt.*;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -24,7 +23,7 @@ public class ProductView {
     }
 
     //thêm sp
-    public void add(){
+    public void addProduct(){
         int id;
         while (true) {
             Scanner input = new Scanner(System.in);

@@ -10,9 +10,9 @@ import java.util.Scanner;
 public class LoginView {
     public User login(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Ghi tên vô: ");
+        System.out.println("Tên đăng nhập: ");
         String username = scanner.nextLine();
-        System.out.println("Mật khẩu là chi: ");
+        System.out.println("Mật khẩu: ");
         String password = scanner.nextLine();
         Role role = authenticate(username, password);
         return new User(username,password, role);
