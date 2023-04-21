@@ -7,6 +7,11 @@ import utils.CSVUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import java.util.Objects;
+
+
+
 public class ProductService implements  IProductService{
     List<Product> productList =new ArrayList<>();
     public static String path ="D:\\Module2\\Module2\\Case_Module2\\src\\main\\java\\data\\product.csv";
@@ -103,6 +108,19 @@ public class ProductService implements  IProductService{
             }
         }
 
+    }
+    public  void deleteBookByID(Integer id) {
+        int index = -1;
+        for (int i = 0; i <productList.size(); i++) {
+            if (Objects.equals(id, productList.get(i).getId())) {
+                index = i;
+            }
+        }
+
+        if (index != -1) {
+            productList.remove(index);
+        }
+        CSVUtils.write(path, productList);
     }
 
 }

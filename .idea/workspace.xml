@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d896a462-b35b-4dac-925a-202b09713792" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AutomatedTesting/src/main/java/com/codegym/SimpleCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AutomatedTesting/src/main/java/com/codegym/SimpleCalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exercise/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exercise/src/main/java/bai12/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exercise/src/main/java/bai12/ComparatorById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exercise/src/main/java/bai12/ComparatorByManufacture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exercise/src/main/java/bai12/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exercise/src/main/java/bai12/Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exercise/src/main/java/bai12/MotorBike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exercise/src/main/java/bai12/RoadTransport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exercise/src/main/java/bai12/Truck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Module2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise/src/main/java/bai12/CA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Case_Module2/src/main/java/data/payment.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Case_Module2/src/main/java/data/payment.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Case_Module2/src/main/java/data/product.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Case_Module2/src/main/java/data/product.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Case_Module2/src/main/java/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Case_Module2/src/main/java/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Case_Module2/src/main/java/views/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Case_Module2/src/main/java/views/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Case_Module2/src/main/java/views/PaymentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Case_Module2/src/main/java/views/PaymentView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Case_Module2/src/main/java/views/ProductView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Case_Module2/src/main/java/views/ProductView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Case_Module2/target/classes/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Case_Module2/target/classes/service/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Case_Module2/target/classes/views/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/Case_Module2/target/classes/views/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Case_Module2/target/classes/views/ProductView.class" beforeDir="false" afterPath="$PROJECT_DIR$/Case_Module2/target/classes/views/ProductView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +30,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Module2/Module2/AutomatedTesting_TDD",
+    "last_opened_file_path": "D:/Module2/Module2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -51,6 +43,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680680213508</updated>
       <workItem from="1680680214618" duration="45000" />
+      <workItem from="1681784318911" duration="55000" />
     </task>
     <servers />
   </component>

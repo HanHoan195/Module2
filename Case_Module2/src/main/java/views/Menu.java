@@ -78,18 +78,22 @@ public class Menu {
                         productView.updateProduct();
                         break;
                     case 5:
+                        productView.deleteProduct();
+                        break;
+
+                    case 6:
                         productView.findProductByNameManager();
                         break;
-                    case 6:
+                    case 7:
                         productView.findProductByTypeManager();
                         break;
-                    case 7:
+                    case 8:
                         paymentView.showRevenue();
                         break;
-                    case 8:
+                    case 9:
                         action();
                         break;
-                    case 9:
+                    case 0:
                         exit();
                         isFinished = true;
                         break;
@@ -113,11 +117,12 @@ public class Menu {
         System.out.println("             ║           [2] Hiển thị mô tả sản phẩm                   ║");
         System.out.println("             ║           [3] Thêm sản phẩm vào danh sách               ║");
         System.out.println("             ║           [4] Sửa thông tin sản phẩm                    ║");
-        System.out.println("             ║           [5] Tìm kiếm sản phẩm theo tên                ║");
-        System.out.println("             ║           [6] Tìm kiếm sản phẩm theo loại               ║");
-        System.out.println("             ║           [7] Xem tổng doanh thu                        ║");
-        System.out.println("             ║           [8] Quay lại                                  ║");
-        System.out.println("             ║           [9] Thoát                                     ║");
+        System.out.println("             ║           [5] Xóa sản phẩm                              ║");
+        System.out.println("             ║           [6] Tìm kiếm sản phẩm theo tên                ║");
+        System.out.println("             ║           [7] Tìm kiếm sản phẩm theo loại               ║");
+        System.out.println("             ║           [8] Xem tổng doanh thu                        ║");
+        System.out.println("             ║           [9] Quay lại                                  ║");
+        System.out.println("             ║           [0] Thoát                                     ║");
         System.out.println("             ╚═════════════════════════════════════════════════════════╝");
         System.out.println();
 

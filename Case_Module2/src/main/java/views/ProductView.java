@@ -12,6 +12,9 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Scanner;
 
+import static views.Menu.manager;
+import static views.Menu.productView;
+
 public class ProductView {
     DecimalFormat format = new DecimalFormat("###,###,###" + "đ");
     Scanner scanner = new Scanner(System.in);
@@ -330,7 +333,7 @@ public class ProductView {
             noChange();
             System.out.print("\t➺ ");
             String name = scanner.nextLine();
-            if (name.equals("-1")){
+            if (!name.equals("-1")){
                 if (productService.existProdutName(name)){
                     System.out.println("Tên này đã tồn tại vui lòng cập nhật lại!");
                 } else {
@@ -372,7 +375,7 @@ public class ProductView {
             try {
                 long price = Long.parseLong(scanner.nextLine());
                 if (!(price == -1 )){
-                    if (price >= 0){
+                    if (price > 0){
                         update.setPrice(price);
                         break;
                     }
@@ -402,6 +405,7 @@ public class ProductView {
         productService.update(id, update);
         System.out.println("✔ Bạn đã cập nhật sản phẩm thành công ✔\n");
         productService.checkExist();
+        showProductManager();
         menu.manager();
 
     }
@@ -476,9 +480,38 @@ public class ProductView {
 
     }
 
+    public void deleteProduct(){
+        boolean check_id = false;
+        int id = 0;
+        do {
+            System.out.println("Nhập ID mà bạn muốn xoá");
+            try {
+                id = Integer.parseInt(scanner.nextLine());
+            }catch (NumberFormatException e ) {
+                System.out.println("Id phải là một số, vui lòng nhập lại");
+                id = 0;
+                continue;
+            }
 
-
-
+            boolean checkIdAvailable = productService.existProduct(id);
+            if (checkIdAvailable) {
+                productService.deleteBookByID(id);
+               showProduct();
+                check_id = true;
+            }else {
+                System.out.println("Không tìm thấy Id, vui lòng nhập lại");
+                check_id = false;
+            }
+        }while (!check_id);
+        manager();
+    }
 
 
 }
+
+
+
+
+
+
+
