@@ -1,0 +1,25 @@
+JAVA COLLECTION:
+-Java collection framework cung cấp các interface và lớp để thức hiện các cấu trức dữ liệu.
+-Các interface và lớp của java collection đc đặt trong gói java util.
+-Thiết kế của java collection:
+  + Các interface mô tả các thao tác của từng loại cấu trúc dữ liệu.
+  + Các abstract class triển khai các phương thức chung.
+  + Các lớp triển khai các phương thức cụ thể của từng lại cấu trức dữ liệu.
+-interface collection là interface gốc của tất cả các interface và lớp còn lại của java collection.
+
+Phân biệt được List, ArrayList, Set, HashSet, LinkedList
+
+LIST: là một tập hợp có thứ tự cho phép chúng ta thêm và xóa các phần tử như một mảng.
+ARRAYLIST:  Lớp ArrayList trong java có thể chứa các phần tử trùng lặp.
+            Lớp ArrayList duy trì thứ tự của phần tử được thêm vào.
+            Lớp ArrayList là không đồng bộ (non-synchronized).
+            Lớp ArrayList cho phép truy cập ngẫu nhiên vì nó lưu dữ liệu theo chỉ mục.
+            Lớp ArrayList trong java, thao tác chậm vì cần nhiều sự dịch chuyển nếu bất kỳ phần tử nào bị xoá khỏi danh sách.
+SET: chứa các phần tử không trùng lặp
+HASHSET: lưu trữ các phần tử của nó trong bảng băm, là cách thực hiện tốt nhất, tuy nhiên nó không đảm bảo về thứ tự các phần tử được chèn vào.
+LINKED LIST:  Lớp LinkedList trong java có thể chứa các phần tử trùng lặp.
+              Lớp LinkedList duy trì thứ tự của phần tử được thêm vào.
+              Lớp LinkedList là không đồng bộ (non-synchronized).
+              Trong java lớp LinkList, thao tác nhanh vì không cần phải dịch chuyển nếu bất kỳ phần tử nào bị xoá khỏi danh sách
+              
+GENERIC:  Generic là cơ chế cho phép truyền kiểu dữ liệu vào như là tham số cho các lớp,interface và phương thức               
