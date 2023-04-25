@@ -22,4 +22,10 @@ LINKED LIST:  Lớp LinkedList trong java có thể chứa các phần tử trù
               Lớp LinkedList là không đồng bộ (non-synchronized).
               Trong java lớp LinkList, thao tác nhanh vì không cần phải dịch chuyển nếu bất kỳ phần tử nào bị xoá khỏi danh sách
               
-GENERIC:  Generic là cơ chế cho phép truyền kiểu dữ liệu vào như là tham số cho các lớp,interface và phương thức               
+GENERIC:  Generic là cơ chế cho phép truyền kiểu dữ liệu vào như là tham số cho các lớp,interface và phương thức      
+
+
+SET/HASHSET:
+ Để Set/HashSet đảm bảo các phần tử không trùng lặp, ta cần đảm bảo rằng đối tượng được thêm vào Set/HashSet phải có mã băm (hash code) và phương thức so sánh bằng (equals) được định nghĩa đúng cách.
+    Mã băm là một số nguyên được tính toán dựa trên các thuộc tính của đối tượng, nhưng cùng một đối tượng sẽ luôn có cùng một mã băm. Phương thức so sánh bằng được sử dụng để so sánh hai đối tượng với nhau, trả về giá trị true nếu chúng là giống nhau và false nếu chúng không giống nhau.
+    Khi thêm một đối tượng vào Set/HashSet, nó sẽ kiểm tra mã băm của đối tượng đó và so sánh nó với các đối tượng khác trong Set/HashSet bằng phương thức so sánh bằng. Nếu không có đối tượng nào có cùng mã băm và được coi là giống nhau, đối tượng đó sẽ được thêm vào Set/HashSet. Nếu đã có đối tượng có cùng mã băm và được coi là giống nhau trong Set/HashSet, đối tượng mới sẽ bị loại bỏ
